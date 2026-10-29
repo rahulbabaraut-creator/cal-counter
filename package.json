@@ -1,19 +1,8 @@
 {
-  "name": "nutri-chrono-app",
+  "name": "nutrichrono-server",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:client": "npm --prefix client run dev -- --host 0.0.0.0",
-    "dev:server": "npm --prefix server run dev",
-    "build": "npm --prefix client run build",
-    "start": "npm --prefix server start"
-  },
-  "devDependencies": {
-    "concurrently": "^9.1.2"
-  },
-  "engines": {
-    "node": ">=20"
-  }
+  "scripts": { "dev": "node --watch index.js", "start": "node index.js" },
+  "dependencies": { "cors": "^2.8.5", "dotenv": "^16.4.7", "express": "^4.21.2", "express-rate-limit": "^7.5.0", "helmet": "^8.0.0", "openai": "^4.77.0" }
 }
