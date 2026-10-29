@@ -82,7 +82,7 @@ function clampNumber(value, min, max, fallback) {
 // In production, serve the built React app from this same service. This keeps
 // the frontend and API on one origin and avoids exposing the AI key to browsers.
 const here = path.dirname(fileURLToPath(import.meta.url));
-const clientDist = path.resolve(here, '../client/dist');
+const clientDist = path.resolve(here, './dist');
 if (existsSync(clientDist)) {
   app.use(express.static(clientDist, { index: false, maxAge: '1h' }));
   app.get('*', (req, res, next) => {
